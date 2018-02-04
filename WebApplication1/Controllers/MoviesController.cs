@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Web.Mvc;
 using WebApplication1.Models;
+using WebApplication1.ViewModels;
 
 namespace WebApplication1.Controllers
 {
@@ -10,23 +12,43 @@ namespace WebApplication1.Controllers
         public ActionResult Random()
         {
             var movie = new Movie() { Name = "Shrek!" };
-            return View(movie);
-        }
+
+            var customers = new List<Customer>
+            {
+                new Customer {Name= "Customer 1" },
+                new Customer {Name= "Customer 2" }
+            };
+
+            var viewModel = new RandomMovieViewModel
+            {
+                Movie = movie,
+                Customers = customers
+            };
             
-
-
-        [Route("movies/released/{year}/{month:regex(\\d{2}):range(1,12)}")]
-        public ActionResult ByReleaseDate(int year,int month)
-        {
-            return Content(year + " / " + month);
+        return View(viewModel);
         }
 
-        public ActionResult Index()
+        public ActionResult Random2()
         {
-            return Content("Zero Page of Movie controller");
+            var movie = new Movie() { Name = "Shrek!" };
+
+            var customers = new List<Customer>
+            {
+                new Customer {Name= "Customer 1" },
+                new Customer {Name= "Customer 2" }
+            };
+
+            var viewModel = new RandomMovieViewModel
+            {
+                Movie = movie,
+                Customers = customers
+            };
+
+            return View(viewModel);
         }
 
-        
-    
+
+
+
     }
 }
