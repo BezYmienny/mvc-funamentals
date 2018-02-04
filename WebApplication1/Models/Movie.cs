@@ -10,9 +10,6 @@ namespace WebApplication1.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
-        // plain class
-        // object 
-        //POCO  Plainn Old CLR Object -> obiekt nieobciążony dziedziczeniem,
-        //scaffolding -> metaprogramistyczna metoda budowania plaikacji z wykorzystaniem baz danych
+    
     }
 }

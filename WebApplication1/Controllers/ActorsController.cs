@@ -14,12 +14,7 @@ namespace WebApplication1.Controllers
         public ActionResult Random()
         {
             var actor = new Actor() { Name = "Shrek!" };
-            //return View(actor) 
-            // => return new ViewResult(actor);
-
-            //return Content("HelloWorld");
-            //return HttpNotFound();
-            //return new EmptyResult();
+            
             return RedirectToAction("Index", "Home", new { page = 1, sortBy = "name" });  // Action,Controller, anonymous object with arguments !!!
         }
 
